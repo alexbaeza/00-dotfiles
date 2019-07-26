@@ -20,8 +20,10 @@ echo "Installing Git..."
 brew install git
 
 echo "Adding Git config"
-git config --global user.name=Alejandro B
-git config --global user.email=alejandro.baeza@enginegroup.com
+read -p 'user.name: ' uservar
+read -p 'user.email: ' useremail
+git config --global user.name=$uservar
+git config --global user.email=$useremail
 
 echo "Installing git-extras"
 brew install git-extras
@@ -73,6 +75,11 @@ apps=(
 # Default is: /Users/$user/Applications
 echo "Installing apps with Cask..."
 brew cask install --appdir="/Applications" ${apps[@]}
+
+
+echo "Your Slack Theme:"
+echo "#21252B,#528BFF,#528BFF,#FFFFFF,#272C33,#FFFFFF,#20B684,#528BFF"
+read -p "Press [Enter] key after setting this in Preferences>Sidebar..."
 
 #Install Zsh & Oh My Zsh
 echo "Installing Oh My ZSH..."
