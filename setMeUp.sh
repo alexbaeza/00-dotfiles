@@ -37,39 +37,42 @@ brew install mas
 echo "Installing Spark Email Client via mas-cli"
 mas install 1176895641
 
-# TODO install evernote
-# TODO install keybase
-# TODO install docker
-# TODO install kitematic
-# TODO install mongoDbCompass
-# TODO install imsoniaREST
-# TODO install kubeforwarder
-# TODO install mockoon
 
-echo "Installing IDEs"
-# TODO install intelliJIdea
-# TODO import config for intelliJIdea
+ides=(
+  intellij-idea
+  visual-studio-code
+  )
 
-# TODO install VSCode
-# TODO import config for Vscode
+# Install apps to /Applications
+# Default is: /Users/$user/Applications
+echo "Installing IDEs with Cask"
+brew cask install --appdir="/Applications" ${ides[@]}
 
-echo "Installing wget"
-brew install wget
+# TODO import config for intelliJ Ultimate
+# TODO import plugins for intelliJ Ultimate
 
-# TODO Finish intalling this
-# echo "Installing TablePlus"
-# wget https://tableplus.io/release/osx/tableplus_latest
+# TODO import config for VsCode
+# TODO import plugins for VsCode
 
 apps=(
+  docker
+  evernote
   filezilla
   firefox
   google-chrome
+  insomnia
+  iterm2
+  keybase
+  kitematic
+  kube-forwarder
+  mockoon
+  mongodb-compass-community
+  slack
   sourcetree
   spotify
-  iterm2
   sublime-text
-  slack
-)
+  tableplus
+  )
 
 # Install apps to /Applications
 # Default is: /Users/$user/Applications
