@@ -66,6 +66,7 @@ apps=(
   kitematic
   kube-forwarder
   mockoon
+  mongodb
   mongodb-compass-community
   slack
   sourcetree
