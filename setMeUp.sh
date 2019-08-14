@@ -68,6 +68,7 @@ apps=(
   mockoon
   mongodb
   mongodb-compass-community
+  robo-3t
   slack
   sourcetree
   spotify
