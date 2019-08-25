@@ -1,3 +1,5 @@
+export PATH=/usr/local/bin:$PATH
+
 export ZSH="/Users/alejandro.baeza/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -5,7 +7,7 @@ POWERLEVEL9K_MODE="nerdfont-complete"
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon user dir_writable dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time root_indicator background_jobs time disk_usage ram)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time root_indicator background_jobs time)
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="❯ "
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="\n"
 POWERLEVEL9K_USER_ICON="\uF415" 
@@ -39,11 +41,17 @@ source ~/.bash_profile
 # Aliases
 # Establishing custom commands below
 
-alias bash_profile="sublime ~/.bash_profile"
+# alias bash_profile="sublime ~/.bash_profile"
+alias sublime="open -a /Applications/Sublime\ Text.app"
 alias suroot='sudo -E -s'
 alias zshconfig="sublime ~/.zshrc" 
+alias zprofile="sublime ~/.zprofile"
 alias add_github_key="ssh-add -K ~/.ssh/alexbaeza-GitHub"
 alias ip="curl https://checkip.amazonaws.com"
+
+# Switch Java versions
+alias setJdk8='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)'
+alias setJdk11='export JAVA_HOME=$(/usr/libexec/java_home -v 1.11)'
 
 # Key bindings
 bindkey "^[^[[C" forward-word

@@ -12,6 +12,9 @@ sudo chown -R $(whoami) /usr/local/Cellar
 sudo chown -R $(whoami)  /usr/local/Homebrew/
 sudo install -d -o $(whoami) -g admin /usr/local/Frameworks
 
+echo "Exporting PATH"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
 # Update homebrew recipes
 echo "Updating homebrew..."
 brew update
@@ -37,6 +40,26 @@ brew install mas
 echo "Installing Spark Email Client via mas-cli"
 mas install 1176895641
 
+echo "Installing azure-cli"
+brew install azure-cli
+
+echo "Installing kubectl"
+brew install kubectl
+
+echo "Installing telepresence"
+brew cask install osxfuse && brew install datawire/blackbird/telepresence
+
+echo "Installing node"
+brew install node
+
+echo "Installing AdoptOpenJDK"
+brew tap AdoptOpenJDK/openjdk
+
+echo "Installing Java8"
+brew cask install adoptopenjdk8
+
+echo "Installing Java11"
+brew cask install adoptopenjdk11
 
 ides=(
   intellij-idea
@@ -93,9 +116,12 @@ curl -L http://install.ohmyz.sh | sh
 echo "Setting up Oh My Zsh theme..."
 git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 
-echo "Downlading Zsh plugins..."
+echo "Installing Zsh plugins..."
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+
+echo "Installing kubetail as ZSH plugin"
+git clone https://github.com/johanhaleby/kubetail.git $ZSH_CUSTOM/plugins/kubetail
 
 echo "Installing fonts"
 brew tap caskroom/fonts
