@@ -127,12 +127,18 @@ echo "Installing fonts"
 brew tap caskroom/fonts
 brew cask install font-meslo-nerd-font
 
-# TODO ADD iTerm2 config
-# com.googlecode.iterm2.plist
+echo "Copying .zshrc"
+cat .zshrc > /Users/$USER/.zshrc
+
+
+echo "Copying .zprofile"
+cat .zprofile > /Users/$USER/.zprofile
+
+echo "Copying Prefs into iTerm2"
 # Specify the preferences directory
-# defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/dotfiles/iterm2"
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "/Users/$USER/Github/00-dotfiles/iterm2/prefs/"
 # Tell iTerm2 to use the custom preferences in the directory
-# defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
 #"Disabling OS X Gate Keeper"
 #"(You'll be able to install any app you want from here on, not just Mac App Store apps)"
