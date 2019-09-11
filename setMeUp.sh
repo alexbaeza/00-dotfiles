@@ -80,9 +80,6 @@ brew cask install --appdir="/Applications" ${ides[@]}
 apps=(
   docker
   evernote
-  filezilla
-  firefox
-  google-chrome
   insomnia
   iterm2
   keybase
@@ -131,8 +128,8 @@ echo "Copying .zshrc"
 cat .zshrc > /Users/$USER/.zshrc
 
 
-echo "Copying .zprofile"
-cat .zprofile > /Users/$USER/.zprofile
+echo "Copying .zshenv"
+cat .zshenv > /Users/$USER/.zshenv
 
 echo "Copying Prefs into iTerm2"
 # Specify the preferences directory
