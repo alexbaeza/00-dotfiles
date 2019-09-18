@@ -8,8 +8,12 @@ if test ! $(which brew); then
 fi
 
 echo "Taking homebrew ownership"
+sudo mkdir /usr/local/Cellar
 sudo chown -R $(whoami) /usr/local/Cellar
-sudo chown -R $(whoami)  /usr/local/Homebrew/
+sudo mkdir /usr/local/Homebrew
+sudo chown -R $(whoami)  /usr/local/Homebrew
+sudo mkdir /usr/local/Frameworks
+sudo chown -R $(whoami)  /usr/local/Frameworks
 sudo install -d -o $(whoami) -g admin /usr/local/Frameworks
 
 echo "Exporting PATH"
@@ -52,6 +56,12 @@ brew cask install osxfuse && brew install datawire/blackbird/telepresence
 echo "Installing node"
 brew install node
 
+echo "Installing pre-commit"
+brew install pre-commit
+
+echo "Installing watchman"
+brew install watchman
+
 echo "Installing AdoptOpenJDK"
 brew tap AdoptOpenJDK/openjdk
 
@@ -78,6 +88,7 @@ brew cask install --appdir="/Applications" ${ides[@]}
 # TODO import plugins for VsCode
 
 apps=(
+  nightowl
   docker
   evernote
   insomnia

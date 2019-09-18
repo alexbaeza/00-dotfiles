@@ -363,7 +363,7 @@
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/Documents/GitHub/00-dotfiles/iterm2</string>
+	<string>~/Documents/Github/00-dotfiles/iterm2/prefs</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -376,8 +376,8 @@
 	<false/>
 	<key>NSSplitView Subview Frames NSColorPanelSplitView</key>
 	<array>
-		<string>0.000000, 0.000000, 224.000000, 258.000000, NO, NO</string>
-		<string>0.000000, 259.000000, 224.000000, 48.000000, NO, NO</string>
+		<string>0.000000, 0.000000, 224.000000, 263.000000, NO, NO</string>
+		<string>0.000000, 264.000000, 224.000000, 43.000000, NO, NO</string>
 	</array>
 	<key>NSTableView Columns v2 KeyBingingTable</key>
 	<data>
@@ -408,9 +408,11 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSColorPanel</key>
-	<string>0 166 224 275 0 0 1920 1177 </string>
+	<string>0 158 224 280 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>449 486 570 502 0 0 1920 1177 </string>
+	<string>0 80 1920 1097 0 0 1920 1177 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>247 132 570 502 0 0 1920 1177 </string>
 	<key>NeverWarnAboutShortLivedSessions_21BEF543-005C-47C0-A493-A641A9286804</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_21BEF543-005C-47C0-A493-A641A9286804_selection</key>
@@ -1144,30 +1146,25 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.2</string>
-	</array>
-	<key>NoSyncBFPRecents</key>
-	<array>
-		<string>MesloLGL Nerd Font</string>
-		<string>Monaco</string>
+		<string>3.3.3</string>
 	</array>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1920, 1200}}</string>
+		<string>{{0, 0}, {1440, 900}}</string>
 		<key>topLeft</key>
-		<string>{638, 956}</string>
+		<string>{308, 861}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
-	<string>72C83C23-3F06-45F9-AE31-61EB3A10EF50</string>
+	<string>6547531D-FBBA-40FE-A6B2-B9723E354977</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>9</integer>
+	<integer>7</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
-	<real>588508286.71174598</real>
+	<real>590060960.87875402</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
 	<true/>
 	<key>NoSyncRecordedVariables</key>
@@ -1860,8 +1857,14 @@
 			</dict>
 		</array>
 	</dict>
+	<key>NoSyncSearchHistory2</key>
+	<array>
+		<string>retry</string>
+		<string>retry0</string>
+		<string>retry-</string>
+	</array>
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
-	<real>588335486.71147895</real>
+	<real>589888160.87855399</real>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -1896,24 +1899,26 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/alejandro.baeza/Documents/GitHub/00-dotfiles/iterm2</string>
+	<string>/Users/alejandro.baeza/Documents/Github/00-dotfiles/iterm2/prefs</string>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final_new.xml?shard=68</string>
+	<string>https://iterm2.com/appcasts/final_new.xml?shard=90</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-08-24T10:33:29Z</date>
+	<date>2019-09-11T09:50:39Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.2</string>
+	<string>3.3.3</string>
 </dict>
 </plist>
