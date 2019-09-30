@@ -126,7 +126,7 @@ apps=(
 
 # Install apps to /Applications
 # Default is: /Users/$user/Applications
-echo "Installing apps wk..."
+echo "Installing apps with Cask..."
 brew cask install --appdir="/Applications" ${apps[@]}
 
 
