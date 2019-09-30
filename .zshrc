@@ -29,6 +29,7 @@ ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 
 plugins=(
+	autoupdate
 	kubetail
 	zsh-syntax-highlighting
 	zsh-autosuggestions
@@ -38,6 +39,10 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 source ~/.bash_profile
 
+# Disable auto correct
+setopt CSH_NULL_GLOB
+unsetopt correct_all
+
 # Aliases
 # Establishing custom commands below
 
@@ -45,13 +50,11 @@ source ~/.bash_profile
 alias sublime="open -a /Applications/Sublime\ Text.app"
 alias suroot='sudo -E -s'
 alias zshconfig="sublime ~/.zshrc" 
+alias zshenv="sublime ~/.zshenv" 
 alias zprofile="sublime ~/.zprofile"
 alias add_github_key="ssh-add -K ~/.ssh/alexbaeza-GitHub"
 alias ip="curl https://checkip.amazonaws.com"
 
-# Switch Java versions
-alias setJdk8='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)'
-alias setJdk11='export JAVA_HOME=$(/usr/libexec/java_home -v 1.11)'
 
 # Key bindings
 bindkey "^[^[[C" forward-word
@@ -59,5 +62,6 @@ bindkey "^[^[[D" backward-word
 
 # Project Specific aliases
 
-alias kubectlDev="kubectl config use-context mmodev-aks-dex01; kubectl get pods -n sds"
-alias kubectlTest="kubectl config use-context mmotest-aks-dex01; kubectl get pods -n sds"
+alias kubectlMMODev="kubectl config use-context mmodev-aks-dex01; kubectl get pods -n sds"
+alias kubectlMMOTest="kubectl config use-context mmotest-aks-dex01; kubectl get pods -n sds"
+

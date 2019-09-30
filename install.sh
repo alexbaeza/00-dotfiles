@@ -53,8 +53,14 @@ brew install kubectl
 echo "Installing telepresence"
 brew cask install osxfuse && brew install datawire/blackbird/telepresence
 
-echo "Installing node"
-brew install node
+echo "Installing nvm"
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+
+echo "Installing node 8 via nvm"
+nvm install 8
+
+echo "Installing node 11 via nvm"
+nvm install 11
 
 echo "Installing pre-commit"
 brew install pre-commit
@@ -71,12 +77,23 @@ brew cask install adoptopenjdk8
 echo "Installing Java11"
 brew cask install adoptopenjdk11
 
+echo "Installing JEnv"
+brew install jenv
+
+echo "Adding JEnv Paths to bash_profile"
+echo 'export PATH="$HOME/.jenv/bin:$PATH"' >> ~/.bash_profile
+echo 'eval "$(jenv init -)"' >> ~/.bash_profile
+
+echo "Adding Java Paths to jenv"
+jenv add /Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/
+jenv add /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/
+
 ides=(
   intellij-idea
   visual-studio-code
   )
 
-# Install apps to /Applications
+# Install ides to /Applications
 # Default is: /Users/$user/Applications
 echo "Installing IDEs with Cask"
 brew cask install --appdir="/Applications" ${ides[@]}
@@ -109,7 +126,7 @@ apps=(
 
 # Install apps to /Applications
 # Default is: /Users/$user/Applications
-echo "Installing apps with Cask..."
+echo "Installing apps wk..."
 brew cask install --appdir="/Applications" ${apps[@]}
 
 
@@ -127,6 +144,7 @@ git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerl
 echo "Installing Zsh plugins..."
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone https://github.com/TamCore/autoupdate-oh-my-zsh-plugins $ZSH_CUSTOM/plugins/autoupdate
 
 echo "Installing kubetail as ZSH plugin"
 git clone https://github.com/johanhaleby/kubetail.git $ZSH_CUSTOM/plugins/kubetail
@@ -137,7 +155,6 @@ brew cask install font-meslo-nerd-font
 
 echo "Copying .zshrc"
 cat .zshrc > /Users/$USER/.zshrc
-
 
 echo "Copying .zshenv"
 cat .zshenv > /Users/$USER/.zshenv
