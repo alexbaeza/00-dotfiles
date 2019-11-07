@@ -766,9 +766,9 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>650 606 620 392 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1237 1200 990 1417 -324 1200 2560 1417 </string>
+	<string>1287 1204 948 1398 -324 1200 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>283 347 570 502 0 0 1920 1177 </string>
+	<string>-210 1582 2138 939 -324 1200 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>1074 386 570 502 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
@@ -1511,7 +1511,7 @@
 					<key>partial</key>
 					<true/>
 					<key>regex</key>
-					<string>(?i:.*( |\[|\(|"|')error( |\]|\)|"|').*)</string>
+					<string>(?i:.*( |\[|\(|"|')ERROR( |\]|\)|"|').*)</string>
 				</dict>
 				<dict>
 					<key>action</key>
@@ -1521,7 +1521,7 @@
 					<key>partial</key>
 					<true/>
 					<key>regex</key>
-					<string>(?i:.*(warning|warn).*)</string>
+					<string>(?i:.*(WARNING|WARN).*)</string>
 				</dict>
 				<dict>
 					<key>action</key>
@@ -1571,7 +1571,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>6547531D-FBBA-40FE-A6B2-B9723E354977</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>48</integer>
+	<integer>49</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2290,6 +2290,7 @@
 	</dict>
 	<key>NoSyncSearchHistory2</key>
 	<array>
+		<string>kitema</string>
 		<string>B0FA</string>
 		<string>statusCode: 400</string>
 		<string>statusCode: !400</string>
@@ -2299,7 +2300,6 @@
 		<string>error"</string>
 		<string>err0r</string>
 		<string>err9r</string>
-		<string>errr0</string>
 	</array>
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
 	<real>589888160.87855399</real>
@@ -2347,7 +2347,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-11-05T10:26:44Z</date>
+	<date>2019-11-06T11:12:06Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>

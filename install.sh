@@ -23,86 +23,28 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 echo "Updating homebrew..."
 brew update
 
-echo "Installing Git..."
-brew install git
+packages=(
+  azure-cli
+  coreutils
+  cython
+  git
+  git-extras
+  gnupg
+  icu4c
+  kubernetes-cli
+  mas
+  oniguruma
+  pinentry-mac
+  pre-commit
+  pypy3
+  sshuttle
+  tree
+  watchman
+  wget
+)
+echo "Installing Packages with brew"
+brew install ${packages[@]}
 
-echo "Adding Git config"
-read -p 'user.name: ' uservar
-read -p 'user.email: ' useremail
-git config --global user.name=$uservar
-git config --global user.email=$useremail
-
-echo "Installing git-extras"
-brew install git-extras
-
-echo "Installing wget"
-brew install wget
-
-echo "Installing Mac App Store-cli (mas-cli)"
-brew install mas
-
-echo "Installing Spark Email Client via mas-cli"
-mas install 1176895641
-
-echo "Installing azure-cli"
-brew install azure-cli
-
-echo "Installing kubectl"
-brew install kubectl
-
-echo "Installing telepresence"
-brew cask install osxfuse && brew install datawire/blackbird/telepresence
-
-echo "Installing nvm"
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
-
-echo "Installing node 8 via nvm"
-nvm install 8
-
-echo "Installing node 11 via nvm"
-nvm install 11
-
-echo "Installing pre-commit"
-brew install pre-commit
-
-echo "Installing watchman"
-brew install watchman
-
-echo "Installing AdoptOpenJDK"
-brew tap AdoptOpenJDK/openjdk
-
-echo "Installing Java8"
-brew cask install adoptopenjdk8
-
-echo "Installing Java11"
-brew cask install adoptopenjdk11
-
-echo "Installing JEnv"
-brew install jenv
-
-echo "Adding JEnv Paths to bash_profile"
-echo 'export PATH="$HOME/.jenv/bin:$PATH"' >> ~/.bash_profile
-echo 'eval "$(jenv init -)"' >> ~/.bash_profile
-
-echo "Adding Java Paths to jenv"
-jenv add /Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/
-jenv add /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/
-
-ides=(
-  intellij-idea
-  visual-studio-code
-  )
-
-# Install ides to /Applications
-# Default is: /Users/$user/Applications
-echo "Installing IDEs with Cask"
-brew cask install --appdir="/Applications" ${ides[@]}
-
-# TODO import config for intelliJ Ultimate
-# TODO import plugins for intelliJ Ultimate
-
-# TODO import config for VsCode
-# TODO import plugins for VsCode
 
 apps=(
   nightowl
@@ -129,6 +71,71 @@ apps=(
 echo "Installing apps with Cask..."
 brew cask install --appdir="/Applications" ${apps[@]}
 
+echo "Adding Git config"
+read -p 'Your name | user.name: ' uservar
+read -p 'Your Github email | user.email: ' useremail
+git config --global user.name=$uservar
+git config --global user.email=$useremail
+git config --global commit.gpgsign true
+git config --global gpg.program gpg
+git config --global core.editor "subl -n -w"
+
+echo "Installing telepresence"
+brew cask install osxfuse && brew install datawire/blackbird/telepresence
+
+# NODE ENVIRONMENT
+echo "Installing nvm"
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+
+echo "Installing node 8 via nvm"
+nvm install 8
+
+echo "Installing node 11 via nvm"
+nvm install 11
+
+echo "Adding NODE config to bash_profile"
+echo '#NODE' >> ~/.bash_profile
+echo 'export NVM_DIR="$HOME/.nvm"' >> ~/.bash_profile
+echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm' >> ~/.bash_profile
+echo '[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion' >> ~/.bash_profile
+
+# JAVA ENVIRONMENT
+echo "Installing AdoptOpenJDK"
+brew tap AdoptOpenJDK/openjdk
+
+echo "Installing Java8"
+brew cask install adoptopenjdk8
+
+echo "Installing Java11"
+brew cask install adoptopenjdk11
+
+echo "Installing JEnv"
+brew install jenv
+
+echo "Adding JEnv Paths to bash_profile"
+echo '#JENV' >> ~/.bash_profile
+echo 'export PATH="$HOME/.jenv/bin:$PATH"' >> ~/.bash_profile
+echo 'eval "$(jenv init -)"' >> ~/.bash_profile
+
+echo "Adding Java Paths to jenv"
+jenv add /Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/
+jenv add /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/
+
+ides=(
+  intellij-idea
+  visual-studio-code
+  )
+
+# Install ides to /Applications
+# Default is: /Users/$user/Applications
+echo "Installing IDEs with Cask"
+brew cask install --appdir="/Applications" ${ides[@]}
+
+# TODO import config for intelliJ Ultimate
+# TODO import plugins for intelliJ Ultimate
+
+# TODO import config for VsCode
+# TODO import plugins for VsCode
 
 echo "Your Slack Theme:"
 echo "#21252B,#528BFF,#528BFF,#FFFFFF,#272C33,#FFFFFF,#20B684,#528BFF"
@@ -138,8 +145,12 @@ read -p "Press [Enter] key after setting this in Preferences>Sidebar..."
 echo "Installing Oh My ZSH..."
 curl -L http://install.ohmyz.sh | sh
 
-echo "Setting up Oh My Zsh theme..."
+echo "Setting up PowerLevel10k Oh My Zsh theme..."
 git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+
+echo "Setting up Spaceship Prompt theme..."
+git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
 echo "Installing Zsh plugins..."
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
