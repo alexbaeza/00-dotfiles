@@ -6,28 +6,28 @@ ZSH_THEME="spaceship"
 
 
 SPACESHIP_PROMPT_ORDER=(
-  terraform
-  time
-  docker
-  aws
-  kubecontext
-  line_sep
-  user
-  host
-  dir
-  git
-  node
-  ruby
-  xcode
-  swift
-  golang
-  rust
-  venv
-  pyenv
-  line_sep
-  char
-)
+    terraform
+    docker
+    aws
+    kubecontext
+    line_sep
+    user
+    dir
+    git
+    line_sep
+    char
+  )
 
+SPACESHIP_RPROMPT_ORDER=(
+    time
+    node
+    ruby
+    xcode
+    swift
+    golang
+    rust
+    pyenv
+  )
 SPACESHIP_KUBECONTEXT_COLOR_GROUPS=(
 # if context contains dev show green
   green  dev
@@ -90,7 +90,7 @@ SPACESHIP_GIT_STATUS_ADDED="+"
 SPACESHIP_GIT_STATUS_MODIFIED="!"
 SPACESHIP_GIT_STATUS_RENAMED="»"
 SPACESHIP_GIT_STATUS_DELETED="✘"
-SPACESHIP_GIT_STATUS_STASHED="\u00b1"
+SPACESHIP_GIT_STATUS_STASHED="⇢"
 SPACESHIP_GIT_STATUS_UNMERGED="="
 SPACESHIP_GIT_STATUS_AHEAD="⇡"
 SPACESHIP_GIT_STATUS_BEHIND="⇣"
@@ -158,7 +158,7 @@ SPACESHIP_PYENV_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"
 SPACESHIP_PYENV_SYMBOL="🐍 "
 SPACESHIP_PYENV_COLOR="yellow"
 # VI_MODE
-SPACESHIP_VI_MODE_SHOW=true
+SPACESHIP_VI_MODE_SHOW=false
 SPACESHIP_VI_MODE_PREFIX=""
 SPACESHIP_VI_MODE_SUFFIX="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"
 SPACESHIP_VI_MODE_INSERT="[I]"
@@ -166,7 +166,6 @@ SPACESHIP_VI_MODE_NORMAL="[N]"
 SPACESHIP_VI_MODE_COLOR="white"
 
 ZSH_DISABLE_COMPFIX=true
-
 ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 
