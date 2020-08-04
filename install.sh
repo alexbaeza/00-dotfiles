@@ -11,9 +11,9 @@ echo "Taking homebrew ownership"
 sudo mkdir /usr/local/Cellar
 sudo chown -R $(whoami) /usr/local/Cellar
 sudo mkdir /usr/local/Homebrew
-sudo chown -R $(whoami)  /usr/local/Homebrew
+sudo chown -R $(whoami) /usr/local/Homebrew
 sudo mkdir /usr/local/Frameworks
-sudo chown -R $(whoami)  /usr/local/Frameworks
+sudo chown -R $(whoami) /usr/local/Frameworks
 sudo install -d -o $(whoami) -g admin /usr/local/Frameworks
 
 echo "Exporting PATH"
@@ -25,46 +25,62 @@ brew update
 
 packages=(
   azure-cli
+  bat
+  cocoapods
   coreutils
   cython
   git
   git-extras
   gnupg
-  icu4c
+  go
+  graphviz
+  helm
+  heroku/brew/heroku
+  htop
+  tomanthony/brews/itermocil
+  jenv
+  jq
   kubernetes-cli
   mas
-  oniguruma
   pinentry-mac
+  postgresql
   pre-commit
   pypy3
+  redis
   sshuttle
   tree
   watchman
   wget
+  yarn
 )
 echo "Installing Packages with brew"
 brew install ${packages[@]}
 
-
 apps=(
-  nightowl
+  brooklyn
+  cscreen
   docker
   evernote
+  font-meslo-nerd-font
+  gpg-suite
   insomnia
   iterm2
   keybase
   kitematic
   kube-forwarder
+  maccy
   mockoon
   mongodb
   mongodb-compass-community
+  nightowl
   robo-3t
+  skype
   slack
   sourcetree
   spotify
   sublime-text
   tableplus
-  )
+)
 
 # Install apps to /Applications
 # Default is: /Users/$user/Applications
@@ -94,10 +110,10 @@ echo "Installing node 11 via nvm"
 nvm install 11
 
 echo "Adding NODE config to bash_profile"
-echo '#NODE' >> ~/.bash_profile
-echo 'export NVM_DIR="$HOME/.nvm"' >> ~/.bash_profile
-echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm' >> ~/.bash_profile
-echo '[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion' >> ~/.bash_profile
+echo '#NODE' >>~/.bash_profile
+echo 'export NVM_DIR="$HOME/.nvm"' >>~/.bash_profile
+echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm' >>~/.bash_profile
+echo '[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion' >>~/.bash_profile
 
 # JAVA ENVIRONMENT
 echo "Installing AdoptOpenJDK"
@@ -113,9 +129,12 @@ echo "Installing JEnv"
 brew install jenv
 
 echo "Adding JEnv Paths to bash_profile"
-echo '#JENV' >> ~/.bash_profile
-echo 'export PATH="$HOME/.jenv/bin:$PATH"' >> ~/.bash_profile
-echo 'eval "$(jenv init -)"' >> ~/.bash_profile
+echo '#JENV' >>~/.bash_profile
+echo 'export PATH="$HOME/.jenv/bin:$PATH"' >>~/.bash_profile
+echo 'eval "$(jenv init -)"' >>~/.bash_profile
+
+echo "Sourcing bash_profile"
+source ~/.bash_profile
 
 echo "Adding Java Paths to jenv"
 jenv add /Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/
@@ -124,18 +143,12 @@ jenv add /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/
 ides=(
   intellij-idea
   visual-studio-code
-  )
+)
 
 # Install ides to /Applications
 # Default is: /Users/$user/Applications
 echo "Installing IDEs with Cask"
 brew cask install --appdir="/Applications" ${ides[@]}
-
-# TODO import config for intelliJ Ultimate
-# TODO import plugins for intelliJ Ultimate
-
-# TODO import config for VsCode
-# TODO import plugins for VsCode
 
 echo "Your Slack Theme:"
 echo "#21252B,#528BFF,#528BFF,#FFFFFF,#272C33,#FFFFFF,#20B684,#528BFF"
@@ -144,9 +157,6 @@ read -p "Press [Enter] key after setting this in Preferences>Sidebar..."
 #Install Zsh & Oh My Zsh
 echo "Installing Oh My ZSH..."
 curl -L http://install.ohmyz.sh | sh
-
-echo "Setting up PowerLevel10k Oh My Zsh theme..."
-git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 
 echo "Setting up Spaceship Prompt theme..."
 git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
@@ -165,10 +175,10 @@ brew tap caskroom/fonts
 brew cask install font-meslo-nerd-font
 
 echo "Copying .zshrc"
-cat .zshrc > /Users/$USER/.zshrc
+cat .zshrc >/Users/$USER/.zshrc
 
 echo "Copying .zshenv"
-cat .zshenv > /Users/$USER/.zshenv
+cat .zshenv >/Users/$USER/.zshenv
 
 echo "Copying Prefs into iTerm2"
 # Specify the preferences directory

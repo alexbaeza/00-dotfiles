@@ -6,10 +6,10 @@ ZSH_THEME="spaceship"
 
 
 SPACESHIP_PROMPT_ORDER=(
-    terraform
-    docker
-    aws
-    kubecontext
+    # terraform
+    # docker
+    # aws
+    # kubecontext
     line_sep
     user
     dir
@@ -28,9 +28,10 @@ SPACESHIP_RPROMPT_ORDER=(
     rust
     pyenv
   )
+
 SPACESHIP_KUBECONTEXT_COLOR_GROUPS=(
 # if context contains dev show green
-  green  dev
+  green dev
 # if context contains test show yellow
   yellow test
 # else red
@@ -191,19 +192,18 @@ unsetopt correct_all
 alias bash_profile="sublime ~/.bash_profile"
 alias sublime="open -a /Applications/Sublime\ Text.app"
 alias suroot='sudo -E -s'
-alias zshconfig="sublime ~/.zshrc" 
-alias zshenv="sublime ~/.zshenv" 
+alias zshconfig="sublime ~/.zshrc"
+alias zshenv="sublime ~/.zshenv"
 alias zprofile="sublime ~/.zprofile"
 alias add_github_key="ssh-add -K ~/.ssh/alexbaeza-GitHub"
 alias ip="curl https://checkip.amazonaws.com"
+alias url='open -a "Google Chrome.app"'
 
+alias mem_info="cd && cd Documents && python ./meminfo.py"
+alias git_clean_branches="git branch | grep -v "master" | xargs git branch -D  "
 
 # Key bindings
 bindkey "^[^[[C" forward-word
 bindkey "^[^[[D" backward-word
 
-# Project Specific aliases
-
-alias kubectlMMODev="kubectl config use-context mmodev-aks-dex01; kubectl get pods -n sds"
-alias kubectlMMOTest="kubectl config use-context mmotest-aks-dex01; kubectl get pods -n sds"
-
+export PATH=$PATH:/Users/alejandro.baeza/.nexustools

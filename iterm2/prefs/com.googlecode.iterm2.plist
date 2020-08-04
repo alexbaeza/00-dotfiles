@@ -4,6 +4,8 @@
 <dict>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
+	<key>ApplePressAndHoldEnabled</key>
+	<false/>
 	<key>AppleScrollAnimationEnabled</key>
 	<integer>0</integer>
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
@@ -718,7 +720,11 @@
 	<true/>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/Desktop</string>
+	<key>NSNavLastUserSetHideExtensionButtonState</key>
+	<false/>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
+	<string>{712, 448}</string>
+	<key>NSNavPanelExpandedSizeForSaveMode</key>
 	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
@@ -764,15 +770,21 @@
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>0 158 224 280 0 0 1440 877 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>650 606 620 392 0 0 1920 1177 </string>
+	<string>650 603 620 392 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1287 1204 948 1398 -324 1200 2560 1417 </string>
+	<string>0 52 1920 1125 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>-210 1582 2138 939 -324 1200 2560 1417 </string>
+	<string>0 698 570 502 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>1074 386 570 502 0 0 1920 1177 </string>
+	<string>1312 52 570 1125 0 0 1920 1177 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
-	<string>0 409 1606 768 0 0 1920 1177 </string>
+	<string>0 673 570 502 0 0 1920 1177 </string>
+	<key>NSWindow Frame iTerm Window 4</key>
+	<string>399 1498 570 502 -324 1200 2560 1417 </string>
+	<key>NSWindow Frame iTerm Window 5</key>
+	<string>97 1726 570 502 -324 1200 2560 1417 </string>
+	<key>NSWindow Frame iTerm Window 6</key>
+	<string>124 1266 570 502 -324 1200 2560 1417 </string>
 	<key>NeverWarnAboutShortLivedSessions_21BEF543-005C-47C0-A493-A641A9286804</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_21BEF543-005C-47C0-A493-A641A9286804_selection</key>
@@ -1445,7 +1457,7 @@
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
-			<integer>1000</integer>
+			<integer>0</integer>
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -1535,7 +1547,7 @@
 				</dict>
 			</array>
 			<key>Unlimited Scrollback</key>
-			<false/>
+			<true/>
 			<key>Use Bold Font</key>
 			<true/>
 			<key>Use Bright Bold</key>
@@ -1556,22 +1568,31 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.5</string>
-		<string>3.3.4</string>
-		<string>3.3.3</string>
 		<string>3.3.6</string>
+		<string>3.3.8</string>
+		<string>3.3.3</string>
+		<string>3.3.5</string>
+		<string>3.3.7</string>
+		<string>3.3.9</string>
+		<string>3.3.4</string>
+	</array>
+	<key>NoSyncBFPRecents</key>
+	<array>
+		<string>MesloLGM Nerd Font</string>
+		<string>MesloLGS Nerd Font</string>
+		<string>MesloLGL Nerd Font</string>
 	</array>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1920, 1200}}</string>
 		<key>topLeft</key>
-		<string>{344, 789}</string>
+		<string>{215, 997}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>6547531D-FBBA-40FE-A6B2-B9723E354977</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>49</integer>
+	<integer>105</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2288,19 +2309,6 @@
 			</dict>
 		</array>
 	</dict>
-	<key>NoSyncSearchHistory2</key>
-	<array>
-		<string>kitema</string>
-		<string>B0FA</string>
-		<string>statusCode: 400</string>
-		<string>statusCode: !400</string>
-		<string>statusCode" </string>
-		<string>error: !null</string>
-		<string>error: nulll</string>
-		<string>error"</string>
-		<string>err0r</string>
-		<string>err9r</string>
-	</array>
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
 	<real>589888160.87855399</real>
 	<key>PointerActions</key>
@@ -2347,9 +2355,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-11-06T11:12:06Z</date>
+	<date>2020-04-23T16:39:45Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>SUUpdateGroupIdentifier</key>
+	<integer>1547995395</integer>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SoundForEsc</key>
@@ -2359,7 +2369,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.6</string>
+	<string>3.3.9</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
