@@ -35,6 +35,7 @@ packages=(
   go
   graphviz
   helm
+  helmfile
   heroku/brew/heroku
   htop
   tomanthony/brews/itermocil
@@ -73,7 +74,6 @@ apps=(
   mongodb
   mongodb-compass-community
   nightowl
-  robo-3t
   skype
   slack
   sourcetree
